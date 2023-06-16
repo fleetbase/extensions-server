@@ -1,0 +1,6 @@
+{
+    "watch": ["src", "views", "public"],
+    "ext": "ts,hbs,css",
+    "ignore": ["src/**/*.spec.ts"],
+    "exec": "postcss src/styles/tailwind.css -o public/styles.css && nest start --watch"
+}

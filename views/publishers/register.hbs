@@ -1,0 +1,41 @@
+<form id="registration-form">
+    <h3 class="text-white text-lg font-bold mb-2">Register as Publisher</h3>
+    <p class="mb-1.5">
+        Register as a publisher. As a publisher you will be able to publish your own extensions to Fleetbase which will
+        enable all Fleetbase extensions to optionally install your extension, additionally you can earn money by selling your extension.
+    </p>
+    <p class="mb-4">
+        If you already have a publisher account you can <a href="/publishers/login">Login here</a>.
+    </p>
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" class="form-input" required>
+    </div>
+
+    <div class="form-group">
+        <label for="about">About:</label>
+        <textarea id="about" name="about" class="form-input" required></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" class="form-input" required>
+    </div>
+
+    <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" class="form-input" required>
+    </div>
+
+    <div class="form-group">
+        <label for="website">Website:</label>
+        <input type="url" id="website" name="website" class="form-input">
+    </div>
+
+    <div class="form-group">
+        <label for="logo">Logo:</label>
+        <input type="file" id="logo" name="logo">
+    </div>
+
+    <input type="submit" class="btn btn-primary my-2" value="Complete Registration">
+</form>

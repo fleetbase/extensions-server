@@ -1,0 +1,201 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+* {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    cursor: default;
+}
+
+html,
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    text-rendering: optimizeLegibility;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-size-adjust: none;
+    cursor: default;
+    overscroll-behavior: none;
+    -webkit-tap-highlight-color: transparent;
+    height: 100vh;
+    overflow: hidden;
+    @apply bg-gray-900 text-gray-100 text-sm;
+}
+
+a {
+    @apply text-blue-300 underline;
+}
+
+a:hover {
+    @apply text-blue-200;
+}
+
+a:active {
+    @apply text-blue-100;
+}
+
+.app-wrapper {
+    max-width: 800px;
+    margin: auto;
+    margin-top: 5rem;
+    @apply shadow-lg;
+}
+
+.app {
+    @apply border border-gray-700 shadow-sm rounded-lg;
+}
+
+.app > section.container {
+    @apply py-4 px-6 bg-gray-800;
+}
+
+.btn {
+    @apply inline-flex items-center px-3 py-2 text-sm font-medium leading-4 transition duration-150 ease-in-out border border-transparent rounded-md;
+}
+
+.btn.is-loading {
+    @apply cursor-wait;
+}
+
+.btn.btn-xs {
+    @apply px-2.5 py-1.5 text-sm leading-4 font-medium rounded-md;
+}
+
+.btn.btn-sm {
+    @apply px-3 py-2 text-sm font-medium leading-4 rounded-md;
+}
+
+.btn.btn-md {
+    @apply px-4 py-2 text-sm font-medium leading-5 rounded-md;
+}
+
+.btn.btn-lg {
+    @apply px-4 py-2 text-base font-medium leading-6 rounded-md;
+}
+
+.btn.btn-link {
+    @apply border-0 outline-0 shadow-none px-0 py-0;
+}
+
+.btn.btn-default  {
+    @apply bg-gray-800 border-gray-700 shadow-sm text-gray-50;
+}
+
+.btn.btn-default:hover  {
+    @apply text-gray-100 bg-gray-700;
+}
+
+.btn.btn-default:focus {
+    @apply border-gray-600 outline-0;
+}
+
+.btn.btn-default:active {
+    @apply text-gray-300 bg-gray-900;
+}
+
+.btn.btn-magic {
+    @apply text-white bg-indigo-600 border-indigo-700 shadow-sm;
+}
+
+.btn.btn-magic:hover:not(:disabled) {
+    @apply bg-indigo-500 text-white;
+}
+
+.btn.btn-magic:focus{
+    @apply outline-0 border-indigo-700;
+}
+
+.btn.btn-magic:active {
+    @apply bg-indigo-700;
+}
+
+.btn.btn-primary {
+    @apply text-white bg-blue-500 border-blue-500 shadow;
+}
+
+.btn.btn-primary:hover:not(:disabled) {
+    @apply bg-blue-400;
+}
+
+.btn.btn-primary:focus {
+    @apply outline-0 border-blue-600;
+}
+
+.btn.btn-primary:active {
+    @apply bg-blue-600;
+}
+
+.btn.btn-secondary {
+    @apply text-blue-500 bg-blue-100 border-blue-300 shadow-sm;
+}
+
+.btn.btn-secondary:hover:not(:disabled) {
+    @apply bg-blue-50;
+}
+
+.btn.btn-secondary:focus {
+    @apply border-blue-300 outline-0;
+}
+
+.btn.btn-secondary:active {
+    @apply bg-blue-200;
+}
+
+.btn.btn-danger {
+    @apply text-white bg-red-600 border-red-700 shadow-sm;
+}
+
+.btn.btn-danger:hover:not(:disabled) {
+    @apply bg-red-500;
+}
+
+.btn.btn-danger:focus {
+    @apply border-red-700 outline-0;
+}
+
+.btn.btn-danger:active {
+    @apply bg-red-700;
+}
+
+.btn.btn-warning {
+    @apply text-white bg-yellow-500 border-yellow-600 shadow-sm;
+}
+
+.btn.btn-warning:hover:not(:disabled) {
+    @apply bg-yellow-400;
+}
+
+.btn.btn-warning:focus {
+    @apply border-yellow-600 outline-0;
+}
+
+.btn.btn-warning:active {
+    @apply bg-yellow-600;
+}
+
+.btn.is-loading .btn-loading-icon-wrapper > svg {
+    animation: fa-spin 1s infinite linear;
+}
+
+.btn:disabled,
+a.btn:disabled {
+    @apply opacity-50 cursor-not-allowed;
+}
+
+.form-group {
+    @apply flex flex-col space-y-1 mb-4;
+}
+
+.form-input {
+    @apply bg-gray-900 shadow-sm border border-gray-600 rounded-md;
+}
