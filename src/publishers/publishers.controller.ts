@@ -1,6 +1,8 @@
 import { Controller, Get, Post, Render, UseInterceptors, UploadedFile, Body } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { PublishersService } from './publishers.service';
+import { PublisherEntity } from './entities/publisher.entity';
+import { CreatePublisherDto } from './dto/create-publisher.dto';
 
 @Controller('publishers')
 export class PublishersController {
@@ -22,28 +24,7 @@ export class PublishersController {
 
     @Post('register')
     @UseInterceptors(FileInterceptor('logo'))
-    async register(
-        @UploadedFile() logo: Express.Multer.File,
-        @Body('name') name: string,
-        @Body('about') about: string,
-        @Body('email') email: string,
-        @Body('password') password: string,
-        @Body('website') website: string
-    ) {
-        // Validate input...
-        // Hash password...
-
-        const publisher = {
-            name,
-            about,
-            email,
-            password,
-            website,
-            logo: logo.buffer, // store the file's content as a Buffer for MongoDB
-        };
-
-        await this.publishersService.create(publisher);
-
-        // Return response...
+    async create(@UploadedFile() file, @Body() createPublisherDto: CreatePublisherDto): Promise<PublisherEntity> {
+        return this.publishersService.create(createPublisherDto, file);
     }
 }

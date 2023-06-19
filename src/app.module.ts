@@ -1,4 +1,6 @@
 import { Module } from '@nestjs/common';
+import { ConfigModule } from '@nestjs/config';
+import { ConfigService } from '@nestjs/config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { PublishersModule } from './publishers/publishers.module';
@@ -11,7 +13,14 @@ import { MongooseModule } from '@nestjs/mongoose';
 
 @Module({
     imports: [
-        MongooseModule.forRoot('mongodb://localhost/fleetbase-extensions'),
+        ConfigModule.forRoot(),
+        MongooseModule.forRootAsync({
+            imports: [ConfigModule],
+            inject: [ConfigService],
+            useFactory: async (configService: ConfigService) => ({
+                uri: configService.get<string>('MONGODB_URI'),
+            }),
+        }),
         ServeStaticModule.forRoot({
             rootPath: join(__dirname, '..', 'client'),
         }),

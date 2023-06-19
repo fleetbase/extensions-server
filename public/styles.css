@@ -737,6 +737,9 @@ select {
 .mb-4 {
   margin-bottom: 1rem;
 }
+.mr-3 {
+  margin-right: 0.75rem;
+}
 .mt-6 {
   margin-top: 1.5rem;
 }

@@ -13,6 +13,9 @@ RUN npm install -g pnpm
 # Install dependencies
 RUN pnpm install
 
+# Rebuild bcrypt
+RUN pnpm rebuild bcrypt
+
 # Copy the rest of the application code to the working directory
 COPY . .
 
@@ -20,4 +23,4 @@ COPY . .
 EXPOSE 3000
 
 # Start the application
-CMD ["npm", "run", "start:prod"]
+CMD ["pnpm", "start:dev"]
